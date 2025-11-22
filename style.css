@@ -200,3 +200,75 @@ body {
 .close-modal { position: absolute; top: 20px; right: 25px; font-size: 30px; cursor: pointer; }
 .tracklist li { padding: 15px 0; border-bottom: 1px solid #333; display: flex; color: #ddd; }
 .track-num { color: var(--accent); font-weight: bold; margin-right: 20px; width: 25px; }
+/* --- STYLES AUTHENTIFICATION & PROFIL --- */
+
+/* Login Card */
+.login-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    width: 100%; max-width: 450px;
+    text-align: center;
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.login-logo { height: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--accent-glow)); animation: float 4s ease-in-out infinite; }
+
+/* Champs de saisie */
+.input-field-container { margin-bottom: 20px; text-align: left; }
+.input-label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-gray); margin-left: 15px; }
+.input-group { position: relative; }
+.input-group i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-gray); font-style: normal; }
+.login-input {
+    width: 100%; padding: 15px 15px 15px 45px;
+    background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; color: white; font-family: var(--font-main); font-size: 1rem;
+    outline: none; transition: 0.3s; box-sizing: border-box;
+}
+.login-input:focus { border-color: var(--accent); box-shadow: 0 0 15px var(--accent-glow); background: rgba(0, 0, 0, 0.6); }
+
+/* Boutons et Onglets */
+.auth-tabs { display: flex; background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 50px; margin-bottom: 30px; }
+.auth-tab { flex: 1; padding: 12px; border: none; background: transparent; color: var(--text-gray); cursor: pointer; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+.auth-tab.active { background: var(--accent); color: white; box-shadow: 0 5px 15px var(--accent-glow); }
+
+.action-btn {
+    width: 100%; padding: 15px; font-size: 1rem; margin-top: 10px; border-radius: 50px; border: none; cursor: pointer;
+    background: var(--accent); color: white; font-weight: 800; transition: 0.3s;
+}
+.action-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px var(--accent-glow); }
+.register-btn { background: linear-gradient(45deg, var(--accent), #a960ee); }
+
+.visitor-btn {
+    background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: #aaa;
+    width: 100%; padding: 12px; border-radius: 50px; cursor: pointer; transition: 0.3s;
+}
+.visitor-btn:hover { border-color: white; color: white; background: rgba(255, 255, 255, 0.05); }
+
+.divider { display: flex; align-items: center; margin: 20px 0; color: rgba(255,255,255,0.3); }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+.divider span { margin: 0 15px; font-size: 0.8rem; }
+
+/* Profil Page */
+.profile-card {
+    background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(30px); border: 1px solid var(--glass-border);
+    padding: 3rem; border-radius: 30px; text-align: center; width: 100%; max-width: 450px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5); position: relative; margin-top: 80px;
+}
+.profile-avatar-container { width: 140px; height: 140px; margin: 0 auto 25px; position: relative; cursor: pointer; }
+.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); }
+.profile-edit-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%;
+    background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center;
+    opacity: 0; transition: 0.3s; color: white; font-size: 1.5rem;
+}
+.profile-avatar-container:hover .profile-edit-overlay { opacity: 1; }
+
+.profile-stats { text-align: left; margin-bottom: 2rem; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border); }
+.logout-btn { width: 100%; border: 1px solid #ff4500; color: #ff4500; background: rgba(255, 69, 0, 0.05); }
+.logout-btn:hover { background: #ff4500; color: white; }
+
+/* Animation */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
